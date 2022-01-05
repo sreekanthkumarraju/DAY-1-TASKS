@@ -82,6 +82,106 @@ Write a blog on Difference between HTTP1.1 vs HTTP2
              ----------------------------------------------
                    
              HTTP/2 is binary instead of textual like HTTP1.x – this makes it transfer and parsing of data over HTTP/2  more faster, more efficient and less error prone
+             
+             
+             
+   -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   
+    2.Write a blog about objects and its internal representation in Javascript
+    
+    
+    
+      Objects:
+      -------
+      
+   Objects are refernce data types in javascript.objects are quite different from  JavaScript’s primitive data-types(Number, String, Boolean, null, undefined and symbol)
+ as primitive data-types all store a single value each (depending on their types).each object may contain any combination of these primitive data-types as well as reference data-types.
+An object, is a reference data type. Variables that are assigned a reference value are given a reference or a pointer to that value. That reference or pointer points to the location in memory 
+where the object is stored. The variables don’t actually store the value.
+
+  objects in JavaScript can be defined as an unordered collection of related data with either primitive or reference types, in the form of “key: value” pairs.keys can be 
+ variables or functions which are called properties or methods in context of object.                                                      -------------
+ 
+   example:If object is a student, then  properties are name, age, address, id, etc and methods are updateAddress, updateName, etc
+   Syntax:
+   ------
+   let student={name:"sree",age:20,Gender:"male",id:151290} ---->keys:name,age,Gender,id,male values:sree,20,male,151290
+    
+    Object and properties:
+    --------------------
+      A JavaScript object has properties associated with it. A property of an object can be explained as a variable that is attached to the object. 
+    Object properties are basically the same as ordinary JavaScript variables, except for the attachment to objects. The properties of an object 
+    define the characteristics of the object. You access the properties of an object with a simple dot-notation:
+    
+     syntax: objectName.propertyname
+        
+        Suppose to access age property--  use objectname.propertyname this is student.age
+        
+       Both the object name (which is a normal variable) and property name are case sensitive. You can define a property by assigning it a value.
+       For example, let’s create an object named student  and give it properties named name, age, and gender and id  as follows  
+        
+                         var student=new object()
+                         student.name="sreekanth"
+                         student.age=24
+                         student.gender="male"
+                         student.id=151290
+                         
+                         
+         Properties of JavaScript objects can also be accessed or set using a bracket notation
+              
+                       student['name']="sreekanth"
+                       student['age']=24
+                       student['gender']="male"
+                       student['id']=151290
+                       
+                       
+                       
+         You can use the bracket notation with for...in to iterate over all the enumerable properties of an object   
+         
+             for(var property in student)
+                   {
+                      console.log(property +":"+student)
+                    
+                    }
+                    
+       Create JavaScript Object with Object Literal
+      --------------------------------------------
+One of easiest way to create a javascript object is object literal, simply define the property and values inside curly braces as shown below          
+                     
+                 let student={name:"sree",age:20,Gender:"male",id:151290}
+                 
+       Create JavaScript Object with Constructor
+        ---------------------------------------
+        
+         Constructor is nothing but a function and with help of new keyword, constructor function allows to create multiple objects of same flavor.
+       
+        
+        function student(firstname, lastname,age,gender) 
+                        {
+                              this.firstname = firstname;
+                              this.lastname = lastname;
+                              this.age = age;
+                              this.gender = gender;
+                        }
+         let student1 = new student(’Joe’, 'Biden’,'20','male');
+         let student2 = new student(’Hillary’, 'Clinton’,'22','female')
+         console.log(student1.name);     //Output: Joe Biden 20 male
+         console.log(student2.name);    //Output: Hillary Clinton 22 female
+      
+      
+        Using the JavaScript Keyword new
+        ---------------------------------
+        
+        The following example also creates a new JavaScript object with four properties
+        
+                         var student=new object()
+                         student.name="sreekanth"
+                         student.age=24
+                         student.gender="male"
+                         student.id=151290
+       
+   
+   
                    
                   
                   
