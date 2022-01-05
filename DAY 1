@@ -1,0 +1,87 @@
+Write a blog on Difference between HTTP1.1 vs HTTP2
+----------------------------------------------------
+
+ The HTTP Protocol
+   -----------
+    HTTP stands for Hyper Text Transfer Protocol ,it is a application layer protocol which allows web based applications to communicate and exchange data.
+    To simplify it is a messenger of the browser.Two computers one is client and other is server communicate and exchange data using HTTP protocol.
+    For example 
+    
+                                                         2.request
+                              ---------->        a request is sent to server     --------
+                              |                                                          |
+                              |                    Get index.html http/1.1               |
+                      1.client                                                           3. server
+                                                                                             index.html
+                    user type in the URL                                                 |
+                     www.index.html                                                      |
+                              |                           request                        |  
+                               <---------------------   html document      < -------------
+        HTTPS intially desined to fetch html documents and deliver it to client.It being continuosly evolved over the years and many features being added with
+        versions HTTP/0.9 to HTTP 3.It became convenient way to quickly and reliable move data on web. Intially HTTP only transmitted only plain text html files
+        Later when need to exchange other than just text files emerged http/1.0 introduced .Later http/2.0 to communicate  much faster and relaible way.Lets see
+        few differences between HTTP 1.1 and HTTP 2.0.
+        
+        HTTP 1.1 VS HTTP 2.0
+         ------------------
+         
+             HTTP  Developed by Timothy Berners-Lee in 198  exchanges  information between a client computer and a local or remote web server. In this process  client sends a 
+           text-based request to a server by calling a method like GET or POST. In response, the server sends a resource like an HTML page back to the client.For example,
+           if you are visiting a website at the domain www.google.com. When you navigate to this URL, the web browser on your computer sends an HTTP request in the form of 
+           a text-based message,       GET /index.html HTTP/1.1
+                                         Host: www.google.com
+                                                                                      
+           This request uses the GET method, which asks for data from the host server listed after Host: In response to  request, the google.com web server returns an HTML page
+         to the requesting client, in addition to any images, stylesheets, or other resources called for in the HTML. Not all of the resources are returned to the client in the
+         first call for data. The requests and responses will go back and forth between the server and client until the web browser has received all the resources necessary to 
+         display the contents of the HTML page on your screen.
+         
+         one request at time vs multiple files and requests at same time
+          --------------------------------------------------------------
+          
+          Now  lets look into HTTP/1.1  features: HTTP1.1  only accepted one single request or connection at a time and ask for acknowledgment after each delivery.For example if 
+        Alice wants to read a novel that her friend Bob wrote, but both Alice and Bob only communicate through the regular mail. Alice sends a letter to Bob and asks Bob to  
+        send her his novel. Bob decides to send the novel HTTP/1.1-style: He mails one chapter at a time, and he only mails the next chapter after receiving a reply letter 
+        from Alice confirming that she received the previous chapter. Using this method of content delivery, it takes Alice many weeks to read Bob's novel
+           
+         HTTP 2.0 resolves this problem through multiplexing this is allowing multiple files and requests to be transferred at the same time, Bob decides to send Alice his novel
+       HTTP/2-style: In this case, he sends each chapter of the novel separately but all at the same time.He also numbers each chapter: Chapter 1, Chapter 2, etc. Now, Alice
+       receives the novel all at once and can arrange it in the correct order on her own time. If a chapter is missing, she may send a quick reply asking for that specific 
+       chapter, but otherwise the process is complete, and Alice can read the novel in just a few days.
+       
+       prioritization
+       ---------------
+                
+         Another important feature of HTTP/2.0 is prioritization . prioritization refers to the order in which pieces of content are loaded.In HTTP/2, data is sent all at once,
+       like Bob when he sends Alice multiple chapters at once. And jlike Bob, developers get to number the chapters in HTTP/2. They can decide if the text of a webpage loads 
+       first, or the CSS files, or the JavaScript, or whatever they feel is most important for the user experience by prioritising by giving numbers.
+       
+       opening new connection every file vs using same connection for different file
+        ----------------------------------------------------------------------------
+        
+         HTTP/1.0 requires  opening a new connection for every file which needs to be transferred between a client and a server which require more time to load a web page 
+       HTTP/2.0 resolves this problem by using the same connection for transferring different files and requests thus loading web page much faster.
+                  
+         server push
+         -----------
+              
+           In HTTP/1.X a server only serves content to a client device if the client asks for it. It is not always practical for modern webpages, which often involve
+         several dozen separate resources that the client must request. HTTP/2 solves this problem by allowing a server to "push" content to a client before the client 
+         asks for it. The server also sends a message letting the client know what pushed content to expect – like if Bob had sent Alice a Table of Contents of his novel 
+          before sending the whole thing.
+          
+         compressing larger files
+          -----------------
+         
+             Typically, Small files load more quickly than large ones. To speed up web performance, both HTTP/1.1 and HTTP/2 compress HTTP messages to make them smaller.
+          However, HTTP/2 uses a more advanced compression method called HPACK that eliminates redundant information in HTTP header packets. 
+          This eliminates a few bytes from every HTTP packet. Given the volume of HTTP packets involved in loading even a single webpage, those bytes add up quickly, 
+          resulting in faster loading.
+                   
+            Transferring data in binary form instead of text
+             ----------------------------------------------
+                   
+             HTTP/2 is binary instead of textual like HTTP1.x – this makes it transfer and parsing of data over HTTP/2  more faster, more efficient and less error prone
+                   
+                  
+                  
